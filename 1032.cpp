@@ -7,9 +7,7 @@ using namespace std;
 int main() {
 	int num; //입력 받는 정수
 	int intlength; //문장 길이
-	
 	cin >> num;
-	
 	char** arr = new char* [num];
 
 	for (int i = 0; i < num; i++) {
@@ -25,7 +23,7 @@ int main() {
 	for (int i = 0; i < intlength; i++) {
 		int cnt = 0;
 		for (int j = 0; j < num; j++) {
-			if (arr[j][i] != arr[0][i]) continue;
+			if (arr[j][i] != arr[0][i]) break;
 
 			else cnt++;
 		}
@@ -42,8 +40,6 @@ int main() {
 	for (int i = 0; i < num; i++) {
 		delete[] arr[i];
 	}
-	delete[] arr[51];
-
-
+	delete[] arr;
 	return 0;
 }
